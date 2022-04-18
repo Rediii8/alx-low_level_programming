@@ -1,30 +1,34 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- *print_array - prints n elements of an array of integers
- *@a: A pointer to an int that will be updated/ changed
- *@n: return value n
- *Return: void which ,means our answer is correct
+ * puts_half - void
+ *
+ * @str: string
+ *
  */
-
-void print_array(int *a, int n)
-
+void puts_half(char *str)
 {
-int i;
+	int len, n, i;
 
-i = 0;
-while (i < n)
-{
-printf("%d", a[i]);
+	len = 0;
 
-if (i < n - 1)
-{
-printf(", ");
-}
+	while (str[len] != '\0')
+	{
+		len++;
+	}
 
-i++;
-}
-
-printf("\n")
-;
+	if (len % 2 == 0)
+	{
+		for (i = len / 2; str[i] != '\0'; i++)
+		{
+			_putchar(str[i]);
+		}
+	} else if (len % 2)
+	{
+		for (n = (len - 1) / 2; n < len - 1; n++)
+		{
+			_putchar(str[n + 1]);
+		}
+	}
+	_putchar('\n');
 }
